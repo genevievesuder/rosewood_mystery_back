@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :users
+  resources :users, only: [:index, :create, :update, :destroy]
   resources :mysteries
   resources :books
   resources :clues
@@ -12,4 +12,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+  get "/authorized_user", to: "users#show"
+  post "/login", to: "sessions#login"
+  delete "/logout", to: "sessions#logout"
 end

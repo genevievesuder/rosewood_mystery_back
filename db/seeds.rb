@@ -51,11 +51,11 @@ c10 = Clue.create(content: "clue content 10", book: b10, mystery: rosewood_libra
 
 puts "Meeting hinters..."
 
-h1 = Hinter.create(first_name: "dsaf", last_name: "gtrfe", image: "", address: "jhgfd")
-h2 = Hinter.create(first_name: "asdf", last_name: "fdws", image: "", address: "htgrvf")
-h3 = Hinter.create(first_name: "rwfs", last_name: "vecdwxs", image: "", address: "wdsq")
-h4 = Hinter.create(first_name: "asdssf", last_name: "cx", image: "", address: "edwsx")
-h5 = Hinter.create(first_name: "fdssd", last_name: "wdqs", image: "", address: "wedsqqqqq")
+h1 = Hinter.create(first_name: "dsaf", last_name: "gtrfe", address: "jhgfd")
+h2 = Hinter.create(first_name: "asdf", last_name: "fdws", address: "htgrvf")
+h3 = Hinter.create(first_name: "rwfs", last_name: "vecdwxs", address: "wdsq")
+h4 = Hinter.create(first_name: "asdssf", last_name: "cx", address: "edwsx")
+h5 = Hinter.create(first_name: "fdssd", last_name: "wdqs", address: "wedsqqqqq")
 
 puts "Learning hints..."
 
