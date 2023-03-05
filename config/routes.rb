@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  resources :users, only: [:index, :create, :update, :destroy]
+  resources :user_clues, only: [:index, :create]
+  resources :users, only: [:index, :create, :update, :destroy, :show]
   resources :mysteries
   resources :books
   resources :clues

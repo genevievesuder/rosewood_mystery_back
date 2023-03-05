@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_23_182608) do
+ActiveRecord::Schema[7.0].define(version: 2023_02_27_200251) do
   create_table "books", force: :cascade do |t|
     t.string "title"
     t.string "author"
@@ -41,9 +41,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_23_182608) do
   end
 
   create_table "hinters", force: :cascade do |t|
-    t.string "first_name"
-    t.string "last_name"
-    t.string "address"
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -64,15 +62,13 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_23_182608) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "new_customers", force: :cascade do |t|
-    t.string "first_name"
-    t.string "last_name"
-    t.string "email"
-    t.string "address"
+  create_table "user_clues", force: :cascade do |t|
     t.integer "user_id", null: false
+    t.integer "clue_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_new_customers_on_user_id"
+    t.index ["clue_id"], name: "index_user_clues_on_clue_id"
+    t.index ["user_id"], name: "index_user_clues_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -88,5 +84,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_23_182608) do
   add_foreign_key "customers", "mysteries"
   add_foreign_key "hints", "hinters"
   add_foreign_key "hints", "mysteries"
-  add_foreign_key "new_customers", "users"
+  add_foreign_key "user_clues", "clues"
+  add_foreign_key "user_clues", "users"
 end

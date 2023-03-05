@@ -38,31 +38,29 @@ b10 = Book.create(title: "book title 10", author: "author name 10", genre: "genr
 
 puts "Finding clues..."
 
-c1 = Clue.create(content: "clue content 1", book: b1, mystery: rosewood_library)
-c2 = Clue.create(content: "clue content 2", book: b2, mystery: rosewood_library)
-c3 = Clue.create(content: "clue content 3", book: b3, mystery: rosewood_library)
-c4 = Clue.create(content: "clue content 4", book: b4, mystery: rosewood_library)
-c5 = Clue.create(content: "clue content 5", book: b5, mystery: rosewood_library)
-c6 = Clue.create(content: "clue content 6", book: b6, mystery: rosewood_library)
-c7 = Clue.create(content: "clue content 7", book: b7, mystery: rosewood_library)
-c8 = Clue.create(content: "clue content 8", book: b8, mystery: rosewood_library)
-c9 = Clue.create(content: "clue content 9", book: b9, mystery: rosewood_library)
-c10 = Clue.create(content: "clue content 10", book: b10, mystery: rosewood_library)
+c1 = Clue.create(content: "Explore the library...", book: b1, mystery: rosewood_library)
+c2 = Clue.create(content: "It travels all around the world without ever leaving it's corner.", book: b2, mystery: rosewood_library)
+c3 = Clue.create(content: "An interesting poem...", book: b3, mystery: rosewood_library)
+c4 = Clue.create(content: "You found a photograph that belonged to someone named Lillian.", book: b4, mystery: rosewood_library)
+c5 = Clue.create(content: "It appears that Lillian was deeply betrayed...", book: b5, mystery: rosewood_library)
+c6 = Clue.create(content: "Something very strange is going on.", book: b6, mystery: rosewood_library)
+c7 = Clue.create(content: "An old looking book mysteriously appeared on your desk... It's locked.", book: b7, mystery: rosewood_library)
+c8 = Clue.create(content: "A riddle...", book: b8, mystery: rosewood_library)
+c9 = Clue.create(content: "You found a key.", book: b9, mystery: rosewood_library)
+c10 = Clue.create(content: "Congratulations. You have solved the mystery at the Rosewood Public Library.", book: b10, mystery: rosewood_library)
 
 puts "Meeting hinters..."
 
-h1 = Hinter.create(first_name: "dsaf", last_name: "gtrfe", address: "jhgfd")
-h2 = Hinter.create(first_name: "asdf", last_name: "fdws", address: "htgrvf")
-h3 = Hinter.create(first_name: "rwfs", last_name: "vecdwxs", address: "wdsq")
-h4 = Hinter.create(first_name: "asdssf", last_name: "cx", address: "edwsx")
-h5 = Hinter.create(first_name: "fdssd", last_name: "wdqs", address: "wedsqqqqq")
+h1 = Hinter.create(name: "Theo Marsh")
+h2 = Hinter.create(name: "Emma Osbourne")
+h3 = Hinter.create(name: "Ian Bennett")
+h4 = Hinter.create(name: "Ms. Warren")
 
 puts "Learning hints..."
 
-h1 = Hint.create(info: "dsfdwf", hinter: h1, mystery: rosewood_library)
-h2 = Hint.create(info: "ewqd", hinter: h2, mystery: rosewood_library)
-h3 = Hint.create(info: "weffew", hinter: h3, mystery: rosewood_library)
-h4 = Hint.create(info: "wefewf", hinter: h4, mystery: rosewood_library)
-h5 = Hint.create(info: "wefwefjh", hinter: h5, mystery: rosewood_library)
+h1 = Hint.create(info: "Check out the poetry section.", hinter: h1, mystery: rosewood_library)
+h2 = Hint.create(info: "You better check the thermostat...", hinter: h2, mystery: rosewood_library)
+h3 = Hint.create(info: "I think there is a spot for that book in the library.", hinter: h3, mystery: rosewood_library)
+h4 = Hint.create(info: "Ms. Warren seems lonely.", hinter: h4, mystery: rosewood_library)
 
 puts "Seeding complete"
