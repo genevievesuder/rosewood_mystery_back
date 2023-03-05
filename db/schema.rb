@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_27_200251) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_05_043258) do
   create_table "books", force: :cascade do |t|
     t.string "title"
     t.string "author"
@@ -71,6 +71,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_27_200251) do
     t.index ["user_id"], name: "index_user_clues_on_user_id"
   end
 
+  create_table "user_hints", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "hint_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["hint_id"], name: "index_user_hints_on_hint_id"
+    t.index ["user_id"], name: "index_user_hints_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email"
     t.string "character_name"
@@ -86,4 +95,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_27_200251) do
   add_foreign_key "hints", "mysteries"
   add_foreign_key "user_clues", "clues"
   add_foreign_key "user_clues", "users"
+  add_foreign_key "user_hints", "hints"
+  add_foreign_key "user_hints", "users"
 end

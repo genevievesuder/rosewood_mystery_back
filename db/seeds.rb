@@ -58,7 +58,7 @@ h4 = Hinter.create(name: "Ms. Warren")
 
 puts "Learning hints..."
 
-h1 = Hint.create(info: "Check out the poetry section.", hinter: h1, mystery: rosewood_library)
+h1 = Hint.create(info: "Look for a book with a crescent moon on it.", hinter: h1, mystery: rosewood_library)
 h2 = Hint.create(info: "You better check the thermostat...", hinter: h2, mystery: rosewood_library)
 h3 = Hint.create(info: "I think there is a spot for that book in the library.", hinter: h3, mystery: rosewood_library)
 h4 = Hint.create(info: "Ms. Warren seems lonely.", hinter: h4, mystery: rosewood_library)

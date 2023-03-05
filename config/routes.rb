@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :user_hints, only: [:index, :create]
   resources :user_clues, only: [:index, :create]
   resources :users, only: [:index, :create, :update, :destroy, :show]
   resources :mysteries
