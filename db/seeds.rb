@@ -25,16 +25,16 @@ end
 
 puts "Writing books..."
 
-b1 = Book.create(title: "book title 1", author: "JC Lebsack", genre: "genre 1", image: "http://thisisanimgurlexample.net")
-b2 = Book.create(title: "book title 2", author: "author name 2", genre: "genre 2", image: "http://thisisanimgurlexample.net")
-b3 = Book.create(title: "book title 3", author: "author name 3", genre: "genre 3", image: "http://thisisanimgurlexample.net")
-b4 = Book.create(title: "book title 4", author: "author name 4", genre: "genre 4", image: "http://thisisanimgurlexample.net")
-b5 = Book.create(title: "book title 5", author: "author name 5", genre: "genre 5", image: "http://thisisanimgurlexample.net")
-b6 = Book.create(title: "book title 6", author: "author name 6", genre: "genre 6", image: "http://thisisanimgurlexample.net")
-b7 = Book.create(title: "book title 7", author: "author name 7", genre: "genre 7", image: "http://thisisanimgurlexample.net")
-b8 = Book.create(title: "book title 8", author: "author name 8", genre: "genre 8", image: "http://thisisanimgurlexample.net")
-b9 = Book.create(title: "book title 9", author: "author name 9", genre: "genre 9", image: "http://thisisanimgurlexample.net")
-b10 = Book.create(title: "book title 10", author: "author name 10", genre: "genre 10", image: "http://thisisanimgurlexample.net")
+b1 = Book.create(title: Faker::Book.title, author: "JC Lebsack", genre: Faker::Book.genre)
+b2 = Book.create(title: Faker::Book.title, author: Faker::Name.name, genre: Faker::Book.genre)
+b3 = Book.create(title: "The Lost Key", author: "Ulysses N. Locke", genre: "L-5-4")
+b5 = Book.create(title: Faker::Book.title, author: Faker::Name.name, genre: Faker::Book.genre)
+b6 = Book.create(title: Faker::Book.title, author: Faker::Name.name, genre: Faker::Book.genre)
+b7 = Book.create(title: Faker::Book.title, author: Faker::Name.name, genre: Faker::Book.genre)
+b8 = Book.create(title: Faker::Book.title, author: Faker::Name.name, genre: Faker::Book.genre)
+b4 = Book.create(title: Faker::Book.title, author: Faker::Name.name, genre: Faker::Book.genre)
+b9 = Book.create(title: Faker::Book.title, author: Faker::Name.name, genre: Faker::Book.genre)
+b10 = Book.create(title: Faker::Book.title, author: Faker::Name.name, genre: Faker::Book.genre)
 
 puts "Finding clues..."
 
@@ -43,11 +43,11 @@ c2 = Clue.create(content: "It travels all around the world without ever leaving 
 c3 = Clue.create(content: "An interesting poem...", book: b3, mystery: rosewood_library)
 c4 = Clue.create(content: "You found a photograph that belonged to someone named Lillian.", book: b4, mystery: rosewood_library)
 c5 = Clue.create(content: "It appears that Lillian was deeply betrayed...", book: b5, mystery: rosewood_library)
-c6 = Clue.create(content: "Something very strange is going on.", book: b6, mystery: rosewood_library)
-c7 = Clue.create(content: "An old looking book mysteriously appeared on your desk... It's locked.", book: b7, mystery: rosewood_library)
-c8 = Clue.create(content: "A riddle...", book: b8, mystery: rosewood_library)
-c9 = Clue.create(content: "You found a key.", book: b9, mystery: rosewood_library)
-c10 = Clue.create(content: "Congratulations. You have solved the mystery at the Rosewood Public Library.", book: b10, mystery: rosewood_library)
+c6 = Clue.create(content: "There was a note in the thermostat.", book: b6, mystery: rosewood_library)
+c7 = Clue.create(content: "It looks like you could open the globe...", book: b7, mystery: rosewood_library)
+c8 = Clue.create(content: "You found a key!", book: b8, mystery: rosewood_library)
+c9 = Clue.create(content: "There was a book inside the globe.. It's locked. Seems like there is a part missing from the front...", book: b9, mystery: rosewood_library)
+c10 = Clue.create(content: "A door has opened.", book: b10, mystery: rosewood_library)
 
 puts "Meeting hinters..."
 
