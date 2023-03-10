@@ -1,7 +1,7 @@
 puts "Recycling old data"
+Note.destroy_all
 Hint.destroy_all
 Clue.destroy_all
-Customer.destroy_all
 Hinter.destroy_all
 Book.destroy_all
 Mystery.destroy_all
@@ -19,12 +19,11 @@ puts "Creating mystery..."
 
 rosewood_library = Mystery.create(name: "Rosewood Library")
 
+# puts "Creating customers..."
 
-puts "Creating customers..."
-
-100.times do
-Customer.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, address: Faker::Address.street_address, mystery: rosewood_library)
-end
+# 100.times do
+# Customer.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, address: Faker::Address.street_address, mystery: rosewood_library)
+# end
 
 puts "Writing books..."
 
@@ -58,7 +57,7 @@ b25 = Book.create(title: Faker::Book.title, author: Faker::Name.name, genre: Fak
 puts "Finding clues..."
 
 c1 = Clue.create(content: "Explore the library...", mystery: rosewood_library)
-c2 = Clue.create(content: "It travels all around the world without ever leaving it's corner.", mystery: rosewood_library)
+c2 = Clue.create(content: "It travels all around the world without ever leaving it's corner. ♘", mystery: rosewood_library)
 c3 = Clue.create(content: "An interesting poem...", mystery: rosewood_library)
 c4 = Clue.create(content: "You found a photograph that belonged to someone named Lillian.", mystery: rosewood_library)
 c5 = Clue.create(content: "It appears that Lillian was deeply betrayed...", mystery: rosewood_library)

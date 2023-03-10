@@ -25,6 +25,10 @@ class UsersController < ApplicationController
         @user.destroy
         head :no_content
       end
+
+      def destroy_all
+        @user.clues.each(&:destroy)
+      end
     
       private
     
