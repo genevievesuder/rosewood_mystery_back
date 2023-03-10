@@ -3,8 +3,6 @@ class CreateClues < ActiveRecord::Migration[7.0]
     create_table :clues do |t|
       t.string :content
 
-
-      t.references :book, null: false, foreign_key: true
       t.references :mystery, null: false, foreign_key: true
 
       t.timestamps

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_05_043258) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_09_234858) do
   create_table "books", force: :cascade do |t|
     t.string "title"
     t.string "author"
@@ -21,11 +21,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_05_043258) do
 
   create_table "clues", force: :cascade do |t|
     t.string "content"
-    t.integer "book_id", null: false
     t.integer "mystery_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["book_id"], name: "index_clues_on_book_id"
     t.index ["mystery_id"], name: "index_clues_on_mystery_id"
   end
 
@@ -61,6 +59,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_05_043258) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "notes", force: :cascade do |t|
+    t.string "note"
+    t.integer "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_notes_on_user_id"
+  end
+
   create_table "user_clues", force: :cascade do |t|
     t.integer "user_id", null: false
     t.integer "clue_id", null: false
@@ -87,11 +93,11 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_05_043258) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "clues", "books"
   add_foreign_key "clues", "mysteries"
   add_foreign_key "customers", "mysteries"
   add_foreign_key "hints", "hinters"
   add_foreign_key "hints", "mysteries"
+  add_foreign_key "notes", "users"
   add_foreign_key "user_clues", "clues"
   add_foreign_key "user_clues", "users"
   add_foreign_key "user_hints", "hints"

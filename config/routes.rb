@@ -1,14 +1,14 @@
 Rails.application.routes.draw do
+  resources :notes, only: [:index, :create, :update, :destroy, :show]
   resources :user_hints, only: [:index, :create]
   resources :user_clues, only: [:index, :create]
   resources :users, only: [:index, :create, :update, :destroy, :show]
-  resources :mysteries
-  resources :books
-  resources :clues
-  resources :customers
-  resources :new_customers
-  resources :hinters
-  resources :hints
+  # resources :mysteries
+  resources :books, only: [:index]
+  resources :clues, only: [:index]
+  resources :customers, only: [:index]
+  resources :hinters, only: [:index]
+  resources :hints, only: [:index]
  
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
